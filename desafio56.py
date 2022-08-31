@@ -8,11 +8,11 @@ somaidade = 0
 contidadeF = 0
 
 #Laço de repetição com o objetivo de realizar 3 perguntas e realizar a metrica conforme condicionais
-for contnome in range(1,3):
+for contnome in range(1,5):
     print("-----{} pessoa-----".format(contnome))
     nome = str(input("Digite o seu primeiro nome: ")) .upper()
     idade = int(input("Digite a sua idade: "))
-    sexo = str(input("Digite seu sexo (M para MASCULINO ou F para FEMININO): ")) .upper()
+    sexo = str(input("Digite seu sexo (M para MASCULINO ou F para FEMININO): ")).strip() .upper()
     print("")
     somaidade = idade + somaidade
     if idade > midade and sexo == "M":
