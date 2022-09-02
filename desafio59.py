@@ -6,6 +6,8 @@
 [ 5 ] sair do programa
 Seu programa deverá realizar a operação solicitada em cada caso.'''
 
+from time import sleep
+
 #Variavel com o objetivo de armazenar dois valores que serão somados, multiplicado ou verificar qual seria o maior
 v1 = int(input('Digite o primeiro número: '))
 v2 = int(input('Digtite o segundo número: '))
@@ -38,8 +40,11 @@ while opcao != 5:
         else:
             print('Os valores inserido são iguais!')
     elif opcao == 4:
+        sleep(1)
         print('Computando...')
+        sleep(1)
     else:
         print('Valor inserido está incorreto, digite novamente, por favor.')
     print('+-'*20)
     print('')
+    sleep(2)
