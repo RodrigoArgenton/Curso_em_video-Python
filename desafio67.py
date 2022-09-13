@@ -8,13 +8,12 @@ while True:
 
     #laço de parada caso seja um valor negativo
     if numtabuada < 0:
-        print('Programa encerrado. VOLTE SEMPRE!')
         break
 
     #laço que será realizado a tabuada
     print('--'*20)
     while cont != 11:
-        resultado = numtabuada * cont
-        print(f'{numtabuada:^5}X {cont:^5} = {resultado:^5}')
+        print(f'{numtabuada:^5}X {cont:^5} = {numtabuada*cont:^5}')
         cont += 1
     print('--'*20)
+print('Programa encerrado. VOLTE SEMPRE!')
