@@ -12,21 +12,27 @@ print('=+'*30)
 while True:
     usernum = int(input('Digite um número: '))
     userjogo = ' '
+
+    #laço com o objetivo de somente passar desse processo se inserir P ou I
     while userjogo not in 'PI':
         userjogo = str(input('Digite P para PAR e I para IMPAR: ')) .strip() .upper() [0]
+    
     compnum = randint(1,10)
     soma = usernum + compnum
     print('*-'*30)
+
     if soma % 2 == 0:
         print(f'Você jogou {usernum} e o camputador jogou {compnum}. Totalizando {soma}, logo deu PAR')
     else:
         print(f'Você jogou {usernum} e o camputador jogou {compnum}. Totalizando {soma}, logo deu IMPAR')
     print('*-'*30)
+
     if soma % 2 == 0 and userjogo == 'P' or soma % 2 == 1 and userjogo == 'I':
         print('Você venceu!')
         print('Vamos jogar novamente...')
         vitorias += 1
     else:
         break
+    
 print('Você perdeu!')
 print(f'GAME OVER!!! você venceu {vitorias} vezes')
