@@ -11,7 +11,7 @@ while True:
     if userCont == 'N':
         break
 
-print(f'Os número digitados na lista forma:{userLista}')
+print(f'Os número digitados na lista foram:{userLista}')
 print(f'Foram digitados {len(userLista)} numeros.')
 print(f'Segue lista ordenada de forma decrescente: {sorted(userLista, reverse=True)}')
 
