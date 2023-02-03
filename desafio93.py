@@ -10,7 +10,8 @@ for q in range(1, quantidadeParidas + 1):
     gols.append(int(input(f'    Quantidade de gols na partida {q}: ')))
     if q == 1:
         jogadorFutebol['total'] = 0
-    jogadorFutebol['total'] += gols[q-1]
+    jogadorFutebol['total'] += gols[q-1] 
+#pode ser usado o jogadorFutebol['total'] = sum(gols   )
 jogadorFutebol['gols'] = gols
 print('+'*50)
 print(jogadorFutebol)
