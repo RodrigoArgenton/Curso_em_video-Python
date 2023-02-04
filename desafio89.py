@@ -14,7 +14,7 @@ while True:
 
 print(f'{"N°":<3}{"Nome":<8}{"Média":>8}')
 for i, a in enumerate(listaAlunos):
-    print(f'{i:<2}{a[0]:<10}{a[2]:>8.1f}')
+    print(f'{i:<2}{a[0]:^7}{a[2]:>10.1f}')
 
 while True:
     userNotaAluno = int(input('Deseja ver a nota de qual aluno? para encerrar digite 999'))
