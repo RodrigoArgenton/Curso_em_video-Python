@@ -7,6 +7,7 @@
 
 
 def nota(num, sit=False):
+
     listaNota = {}
     maiorNota = 0
     menorNota = 0
@@ -36,6 +37,7 @@ def nota(num, sit=False):
     return listaNota
 
 respUser = []
+
 while True:
     userResp = int(input('Digite a nota: '))
     respUser.append(userResp)
@@ -43,10 +45,13 @@ while True:
     
     if cont in 'N':
         break
+
 sitUSer = str(input('Deseja mostrar a situação da nota? [S/N]')).upper() .strip() [0]
+
 if sitUSer in 'S':
     sitUSer = True
 else:
     sitUSer = False
+
 resp = nota(respUser, sitUSer)
 print(resp)
