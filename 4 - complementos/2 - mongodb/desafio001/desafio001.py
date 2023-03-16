@@ -1,3 +1,4 @@
+from view import view
 from dotenv import load_dotenv
 from pymongo import MongoClient
 import os
@@ -18,13 +19,7 @@ colecao = meu_banco['cientistas']   # cria uma collection, todavia, caso não se
 # {"nome": "Edenise Garcia", "país": "BR"},]
 # c = colecao.insert_many(cientista)
 
-for document in colecao.find(): # mostra todos os dicionarios existentes
-    print(document)
+a = view()
+a.visualizarOrganizado(colecao)
 print()
-print()
-print('-'*50)
-
-for a in colecao.find():    # mostra item por item dentro dos dicionários
-    for b, c in a.items():
-        print(f'{b}: {c}')
-    print('-'*50)
+a.visualizarDados(colecao)
