@@ -9,8 +9,8 @@ import requests
 load_dotenv()   # carrega o arquivo .env
 MONGO_URI = os.getenv("MONGO_URI")  # recebe o valor que está na variavel "MONGO_URI" que está no arquivo .env
 cliente = MongoClient(MONGO_URI)    # encurta o processo de conexão com os bancos de dados existentes no mongo
-banco = cliente.banco_desafio002
-colecao = banco['desafio002']
+banco = cliente.banco_desafio002    # cria um banco de dados chamado "banco_desafio002"
+colecao = banco['desafio002']       # cria uma coleção no bando de dados "desafio002"
 
 while True:
     request = requests.get('https://www.affirmations.dev/')
