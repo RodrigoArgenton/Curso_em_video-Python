@@ -20,15 +20,16 @@ opcao = int(input('Qual seria a sua opção: '))
 
 if opcao == 1:
     while True:
-        pessoa1 = pessoa()
-        addcolecao = colecao.insert_one(pessoa1.mongodb())
-        continuar = str(input('Deseja continuar:[S/N] ')) .strip() .upper() [0]
+        pessoa1 = pessoa() # Solicita os atributos de uma pessoa para preencher
+        addcolecao = colecao.insert_one(pessoa1.mongodb()) # Adiciona os atributos inseridos pela pessoas, no mongodb
+        continuar = str(input('Deseja continuar:[S/N] ')) .strip() .upper() [0] # PErgunta se vai colocar mais uma pessoa
         if continuar == 'N':
             break
+
 elif opcao == 2:
-    for itens in colecao.find():
+    for itens in colecao.find(): # mostra todos os dicionários de uma coleção
         print('-'*100)
-        for a,b in itens.items():
+        for a,b in itens.items(): # mostra chave e valor de forma formatada
             print(f'{a}: {b}')
 else:
     print('Valor não corresponde')

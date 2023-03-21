@@ -1,5 +1,6 @@
 class pessoa:
     def __init__(self):
+        # atributos de uma pessoa
         nome = str(input('Digite o seu nome: '))
         idade = int(input('Digite a sua idade: '))
         altura = int(input('Digite a sua altura em cm: '))
@@ -12,6 +13,7 @@ class pessoa:
         self.sexo = sexo
 
     def mongodb(self):
+        # função que retorna um dicionário com os valores gerados
         p = {}
         p['nome'] = self.nome
         p['idade'] = self.idade
