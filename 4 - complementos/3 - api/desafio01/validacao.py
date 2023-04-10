@@ -27,9 +27,14 @@ class login:
         else:
             print("Error")
 
-    def novoUser(self):
+    def novoUser(self, email, senha):
         user = {}
-        user['email'] = self.email
-        user['senha'] = self.senha
+        user['email'] = email
+        user['senha'] = senha
         print(user)
-        addcolecao = self.colecao.insert_one(user)
+        self.colecao.insert_one(user)
+        return 0
+    
+    def users(self):
+        for colecao in self.colecao.find():
+            print(colecao)

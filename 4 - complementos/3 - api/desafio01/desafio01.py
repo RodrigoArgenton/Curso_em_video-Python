@@ -5,4 +5,5 @@ while True:
     # senha = str(input("Digite a sua senha: "))
     
     acesso = login(email='rodrigo@gmail.com', senha='senha')
-    acesso.validacao()
+    acesso.users()
+    break
