@@ -1,23 +1,19 @@
-from enum import Enum
-
 from fastapi import FastAPI
-
-
-class ModelName(str, Enum):
-    alexnet = "alexnet"
-    resnet = "resnet"
-    lenet = "lenet"
-
 
 app = FastAPI()
 
+vendas = {
+    1: {"teste1": "teste01", "preço": 5, "Quantidade": 2},
+    2: {"teste2": "teste02", "preço": 6, "Quantidade": 3},
+    3: {"teste3": "teste03", "preço": 7, "Quantidade": 4},
+    4: {"teste4": "teste04", "preço": 8, "Quantidade": 5},
+    5: {"teste5": "teste05", "preço": 9, "Quantidade": 6},
+}
 
-@app.get("/models/{model_name}")
-async def get_model(model_name: ModelName):
-    if model_name is ModelName.alexnet:
-        return {"model_name": model_name, "message": "Deep Learning FTW!"}
+@app.get("/")
+def home():
+    return {"Vendas": len(vendas)}
 
-    if model_name.value == "lenet":
-        return {"model_name": model_name, "message": "LeCNN all the images"}
-
-    return {"model_name": model_name, "message": "Have some residuals"}
+@app.get("/vendas/{id_venda}")
+def get_venda(id_venda: int):
+    return vendas[id_venda]
