@@ -2,18 +2,14 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-vendas = {
-    1: {"teste1": "teste01", "preço": 5, "Quantidade": 2},
-    2: {"teste2": "teste02", "preço": 6, "Quantidade": 3},
-    3: {"teste3": "teste03", "preço": 7, "Quantidade": 4},
-    4: {"teste4": "teste04", "preço": 8, "Quantidade": 5},
-    5: {"teste5": "teste05", "preço": 9, "Quantidade": 6},
-}
 
-@app.get("/")
-def home():
-    return {"Vendas": len(vendas)}
-
-@app.get("/vendas/{id_venda}")
-def get_venda(id_venda: int):
-    return vendas[id_venda]
+@app.get("/users/{user_id}/items/{item_id}")
+async def read_user_item(user_id: int, item_id: str, q: str | None = None, short: bool = False):
+    item = {"item_id": item_id, "owner_id": user_id}
+    if q:
+        item.update({"q": q})
+    if not short:
+        item.update(
+            {"description": "This is an amazing item that has a long description"}
+        )
+    return item
