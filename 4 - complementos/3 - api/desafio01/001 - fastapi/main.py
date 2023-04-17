@@ -1,15 +1,21 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+
+class User(BaseModel):
+    login: str
+    senha: str
+    nome: str
+    idade: int | None = None
 
 app = FastAPI()
 
+results = []
 
-@app.get("/users/{user_id}/items/{item_id}")
-async def read_user_item(user_id: int, item_id: str, q: str | None = None, short: bool = False):
-    item = {"item_id": item_id, "owner_id": user_id}
-    if q:
-        item.update({"q": q})
-    if not short:
-        item.update(
-            {"description": "This is an amazing item that has a long description"}
-        )
-    return item
+@app.post("/")
+async def cadastrar(cadastro: User):
+    results.append(cadastro)
+    return cadastro
+
+@app.get("/")
+async def pegar_usuario():
+    return results
