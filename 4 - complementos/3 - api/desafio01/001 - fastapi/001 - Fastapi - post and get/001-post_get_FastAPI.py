@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 class User(BaseModel):
-    login: str
+    email: str
     senha: str
     nome: str
     idade: int | None = None
@@ -19,3 +19,4 @@ async def cadastrar(cadastro: User):
 @app.get("/")
 async def pegar_usuario():
     return results
+
