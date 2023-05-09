@@ -1,0 +1,24 @@
+class VendingMachine:
+    def __init__(self, numItem, valorItem):
+        self.numItem = numItem
+        self.valorItem = valorItem
+        pass
+
+    def buy(self, qtdeItem, coins):
+        if qtdeItem <= self.numItem and coins >= self.valorItem * qtdeItem:
+            self.numItem = self.numItem - qtdeItem
+            return coins - self.valorItem * qtdeItem
+        elif qtdeItem > self.numItem:
+            return "Not enough items in the machine"
+        elif coins < self.valorItem * qtdeItem:
+            return "Not enough coins"
+
+
+
+numItem, valorItem  = map(int, input("Digite o número de itens: ").split())
+machine = VendingMachine(numItem,valorItem)
+n = int(input("Quantidade de transação: "))
+
+for i in range(n):
+    qtdeItem, coins = map(int, input().split())
+    comprar = machine.buy(qtdeItem, coins)
